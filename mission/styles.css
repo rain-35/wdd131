@@ -1,0 +1,52 @@
+body {
+    max-width: 700px ;
+    margin: 0 auto;
+    border: 2px solid darkgray;
+}
+header {
+    text-align: center;
+}
+
+#content {
+    
+    margin: 80px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2em;
+    letter-spacing:2px;
+}
+h2 {
+    color: lightblue;
+    font-size: 0.9em;
+    letter-spacing:2px;
+}
+hr {
+    background-color: lightgray;
+    height: 1px;
+    border: none;
+}
+main {
+    line-height: 1.3em;
+}
+h3 {
+    font-style: italic;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+#logo {
+    max-width: 110px;
+}
+
+#logo-box {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
