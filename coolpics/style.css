@@ -69,6 +69,9 @@ h2 {
 
 
 img {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     margin: 0 auto;
     border: white 5px solid;
     box-shadow: black 2px 2px 7px;
@@ -81,6 +84,8 @@ img {
     }
     img {
         max-width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
     }
     
 }
