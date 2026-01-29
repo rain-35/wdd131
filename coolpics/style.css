@@ -20,34 +20,51 @@ h1 {
 
 #menu-button{
     background-color: transparent;
-    border: none;
     color: white;
     font-size: 1.2em;
     margin: 10px;
     margin-top: 15px;
     cursor: pointer;
+    border: 1px solid transparent ;
+}
+
+#menu-button.menu_open {
+    color: lightgray;
 }
 
 
 #menu-button:hover {
-    text-decoration: underline;
+    border: 1px solid lightgray ;
+    border-radius: 5px;
+    background-color: #4991E4;
+
 }
+
 
 #nav-links {
     font-size: 1.1em;
     margin: 10px;
     margin-top: 15px;
-    display: none;
+    
 }
+
 #nav-links a {
     color: white;
-    padding: 10px;
+    margin: 10px;
+    padding: 2px;
     cursor: pointer;
+    text-decoration: none;
+    border: 1px solid transparent ;
+    border-radius: 5px;
+
 
 }
 
 #nav-links a:hover {
     text-decoration: none;
+    border: 1px solid lightgray ;
+    border-radius: 5px;
+    background-color: #4991E4;
 }
 
 #content {
@@ -76,6 +93,20 @@ img {
     border: white 5px solid;
     box-shadow: black 2px 2px 7px;
 }
+
+footer {
+    background-color: #2a81e2;
+    color: white;
+    text-align: center;
+    height: 50px;
+    padding: 10px;
+}
+
+
+.hide{
+    display: none;
+}
+
 
 @media screen and (min-width: 700px) {
     #pic-grid {

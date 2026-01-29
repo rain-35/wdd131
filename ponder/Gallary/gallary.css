@@ -43,7 +43,6 @@ dialog {
 
 }
 
-
 .close-viewer:hover {
     animation: strobe 0.5s infinite;
     cursor: pointer;
