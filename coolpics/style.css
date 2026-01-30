@@ -3,6 +3,8 @@
     font-family: Arial, sans-serif;
 }
 
+
+
 header {
     background-color: #2a81e2;
     margin-top: 0;
@@ -42,20 +44,25 @@ h1 {
 
 
 #nav-links {
-    font-size: 1.1em;
-    margin: 10px;
-    margin-top: 15px;
+    font-size: 1.2em;
+    margin-top: 5px;
+    padding: -2px;
+    
     
 }
 
 #nav-links a {
     color: white;
-    margin: 10px;
+    margin: 10px auto;
     padding: 2px;
     cursor: pointer;
     text-decoration: none;
     border: 1px solid transparent ;
     border-radius: 5px;
+    display: block;
+    max-width:max-content;
+
+    
 
 
 }
@@ -107,6 +114,47 @@ footer {
     display: none;
 }
 
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
+dialog {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+    margin: 0;
+    align-content: center;
+}
+
+dialog img {
+    max-height: 100%;
+    max-width: 90%;
+    display: block;
+
+   
+}
+
+.close-viewer {
+    position: absolute;
+    top: 10vh;
+    right: 2vh;
+    padding: 3px 6px;
+    font-size: 1.5em;
+    background-color: darkgray;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: .5s;
+    color: black;
+
+}
+.close-viewer:hover {
+    animation: strobe 0.5s infinite;
+    cursor: pointer;
+}
+
+
+
 
 @media screen and (min-width: 700px) {
     #pic-grid {
@@ -129,13 +177,17 @@ footer {
     #menu-button {
         display: none;
     }
+
     #nav-links {
         display: block;
-    }  
+    }
+
+    #nav-links a {
+    display: inline-block;
+    }
+
+
 }
-
-
-
 
 
 

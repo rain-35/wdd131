@@ -16,10 +16,7 @@ function openModal(e) {
     modalImage.src = full;
     modalImage.alt = alt;
     modal.showModal();
-    
 
-   
-    
 }
 // Close modal on button click
 closeButton.addEventListener('click', () => {
