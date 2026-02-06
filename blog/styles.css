@@ -1,0 +1,58 @@
+h1  {
+    color: #452f41;
+    font-family:  tahoma, sans-serif;
+    text-align: center;
+}
+
+hr{
+    background-color: #edc89d;
+    border: none;
+    height: 2px;
+    width: 100%;
+}
+
+nav {
+
+text-align: right;
+margin: 20px;
+    
+}
+
+nav a {
+    color: #a6102f;
+    font-family: sans-serif;
+    text-decoration: none;
+    margin: 10px;
+    padding: 2px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+
+}
+
+#third_line {
+    margin-top: 59px;
+}
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#book_info {
+    text-align: right;
+}
+#book_info p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+
+#date {
+    font-style: italic;
+}
+
+h2 {
+    font-family: tahoma,sans-serif;   
+    color: #a6102f;
+
+}
