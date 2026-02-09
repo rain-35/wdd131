@@ -118,7 +118,7 @@ footer p {
 
     .vertical-line {
         display: block;
-        width: 1px;
+        width: 2px;
         min-height: 95%;
         border: none;
         grid-column: 2;
