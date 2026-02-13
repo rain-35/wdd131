@@ -40,9 +40,10 @@ const articles = [
 	}
 ];
 
-articles.foreach(setBook);
+const bookList = document.getElementById('book-list');
+// articles.foreach(setBook);
 
-function setBook(book){
+articles.forEach(book => {
     const article = document.createElement('article');
     article.className = 'book';
     let html = `
@@ -63,8 +64,8 @@ function setBook(book){
 
 `
     article.innerHTML = html;
-    section.appendChild(article);
+    bookList.appendChild(article);
 
-}
+});
 
 

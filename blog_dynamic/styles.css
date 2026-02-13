@@ -34,7 +34,7 @@ nav a:hover {
 #third_line {
     margin-top: 59px;
 }
-main {
+.book {
     max-width: 600px;
     margin: 10px;
     display: grid;
@@ -101,7 +101,7 @@ footer p {
 
     } 
     
-    main {
+    .book {
         grid-template-columns: .3fr .05fr 1fr ;
         grid-template-rows: min-content min-content min-content ;
         max-width: 900px;
