@@ -24,12 +24,29 @@
         </header>
         <main>
             <div id="form">
-                <!-- <div id="cardExpiration">
-                    <label for="expirationDate">EXPIRATION</label>
-                    <input type='text' id='month' name="expMonth" placeholder="MM" aria-labelledby="expirationDate">
-                    <input type='text' id='year' name="expYear" placeholder="YY" aria-labelledby="expirationDate">
-                </div> -->
+
                 <div class="card" id="front_card">
+                    <p id="title" class="field_lable"> TOTAL: $199</p>
+
+                    <p id="card_icon">💳</p>
+
+                    <div id="cardNumber">
+                        <label for="card_number_label">CARD NUMBER</label>
+                        <input class="input_box" type="number" id="card_number" name="card_number" placeholder="1234 5678 9101 1020" required aria-labelledby="card_number_label">
+                    </div>
+
+                    <div id="cardHolder">
+                        <label for="card_holder_label">CARD HOLDER</label>
+                        <input class="input_box" type="text" id="card_holder" name="card_holder_name" placeholder="John Doe" required aria-labelledby="card_holder_label">
+                     
+                    </div>
+
+                    <div id="cardExpiration">
+                        <label for="expirationDate">EXPIRATION</label>
+                        <input class="input_box" type='text' id='month' name="expMonth" placeholder="MM" required aria-labelledby="expirationDate">
+                        <input class="input_box" type='text' id='year' name="expYear" placeholder="YY" required aria-labelledby="expirationDate">
+                    </div>
+
 
                 </div>
                 <div class="card" id="back_card">
