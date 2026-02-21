@@ -1,23 +1,21 @@
-#form{
+#checkoutForm{
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 4fr 1fr 1fr;
-    max-width: 600px;
+    grid-template-rows: 1fr 4fr 1fr 1.2fr;
+    max-width: 400px;
     margin: 0 auto;
     margin-top: 30px;
-    height: 400px;
-
+    height: 250px;
 
 }
 
 .card{
     display: grid;
     background-color: #d3d3d3;
-    width: 100%;
-    height: 100%;
     box-shadow: 3px 3px 3px #828282;
     border-radius: 10px ;
     padding: 15px;
+
 }
 
 
@@ -27,7 +25,7 @@
     z-index: 1;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: minmax(0, .9fr) minmax(0, 1fr) minmax(0, 1fr);
     gap: 3px;
 }
 
@@ -36,18 +34,42 @@
     grid-column: 2/4;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 2fr  1fr 3fr;
+    grid-template-rows: 2fr  1.1fr 3fr;
     gap: 3px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
  
+}
+
+.field_lable{
+    line-height: 0;
+    font-size: 0.8em;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#title{
+    margin: 0;
+    margin-top: 20px;
+}
+    
+
+#card_icon{
+    text-align: right;
+    font-size: 2em;
+    margin: 0px;
+    margin-top: 15px;
+    line-height: 0;
+    
 }
 
 #cardExpiration{
     grid-column: 2/3;
     grid-row: 3/4;
 
- 
-}
 
+}
 
 #cardHolder{
     grid-column: 1/2;
@@ -56,26 +78,51 @@
 }
 
 .input_box{
+    line-height: 0;
+    font-size: 0.8em;
     border-radius: 4px;
     border: 1px solid #828282;
-    height: 30px;
+    height: 25px;
     font-family: Arial, Helvetica, sans-serif;
     
 }
 
-#cardExpiration label{
-    display: block;
-
-}
-
 #year, #month{
-    width: 50px;
+    width: 30px;
 }
-/* #year{ 
-    display: inline-block;
-  
-} */
-    
+
+hr{
+    background-color: black;
+    width: 100%;
+    height: 33px;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    border: none;
+    margin: 0;
+
+}
+
+#security_code{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    width: 50px;
+    padding-left: 10px;
+}
+
+#cvc{
+    width: 50px;   
+
+}
+   
+.submit_button{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+
+}
 
 
 

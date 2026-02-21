@@ -23,7 +23,9 @@
 
         </header>
         <main>
-            <div id="form">
+            <section class="errors"></section>
+            <form id="checkoutForm" action="completed.html" method="post">
+            
 
                 <div class="card" id="front_card">
                     <p id="title" class="field_lable"> TOTAL: $199</p>
@@ -31,18 +33,18 @@
                     <p id="card_icon">💳</p>
 
                     <div id="cardNumber">
-                        <label for="card_number_label">CARD NUMBER</label>
-                        <input class="input_box" type="number" id="card_number" name="card_number" placeholder="1234 5678 9101 1020" required aria-labelledby="card_number_label">
+                        <label class="field_lable" for="card_number_label">CARD NUMBER</label>
+                        <input class="input_box" type="number" id="card_number" name="card_number" pattern="[0-9]{16}" placeholder="1234 5678 9101 1020" required aria-labelledby="card_number_label">
                     </div>
 
                     <div id="cardHolder">
-                        <label for="card_holder_label">CARD HOLDER</label>
+                        <label class="field_lable" for="card_holder_label">CARD HOLDER</label>
                         <input class="input_box" type="text" id="card_holder" name="card_holder_name" placeholder="John Doe" required aria-labelledby="card_holder_label">
                      
                     </div>
 
                     <div id="cardExpiration">
-                        <label for="expirationDate">EXPIRATION</label>
+                        <label class="field_lable" for="expirationDate">EXPIRATION</label>
                         <input class="input_box" type='text' id='month' name="expMonth" placeholder="MM" required aria-labelledby="expirationDate">
                         <input class="input_box" type='text' id='year' name="expYear" placeholder="YY" required aria-labelledby="expirationDate">
                     </div>
@@ -50,10 +52,18 @@
 
                 </div>
                 <div class="card" id="back_card">
+                    <hr>
+                    <div id="security_code">
+                        <label class="field_lable" for="cvc_label">CVC/CVV</label>
+                        <input class="input_box" type="text" id="cvc" name="cvc" placeholder="xxx" required aria-labelledby="cvc_label">
+                    </div>
 
                 </div>
 
-            </div>
+                <button class="submit_button" type="submit">Submit</button>
+
+            
+            </form>
 
         </main>
         <footer>
