@@ -3,6 +3,7 @@ const creditNumber = document.querySelector('#card_number');
 const cardHolder = document.querySelector('#card_holder');
 const cardExpYear = document.querySelector('#year');
 const cardExpMonth = document.querySelector('#month');
+
 const cardCvc = document.querySelector('#cvc');
 const currentDate = new Date()
 
@@ -20,7 +21,12 @@ function testCardNumberLength(number) {
 }
 
 function checkDate(month, year) {
-    if (2000 + year < currentDate.getFullYear() || (2000 + year === currentDate.getFullYear() && month <= currentDate.getMonth())) {
+    const monthNum = Number(month);
+    const yearNum = Number(year);
+    if (2000 + yearNum < currentDate.getFullYear()){
+        return false;
+    }
+    else if (2000 + yearNum === currentDate.getFullYear() && monthNum <= currentDate.getMonth()) {
         return false;
     }
     return true;
