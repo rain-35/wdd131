@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="character card">
+    <meta property="og:description" content="a character card with javascript">
+    <meta property="og:url" content="https://rain-35.github.io/wdd131/character_card/index.html">
+    <!-- preview image goes here -->
+    <meta property="og:image" content="page_summary.png">
+
+    <!-- Twitter Card -->
+     <!-- summary image -->
+    <meta name="twitter:card" content="page_summary.png">
+    <!-- page title -->
+    <meta name="twitter:title" content="character card">
+    <meta name="twitter:description" content="a character card with javascript">
+    <!-- preview image goes here -->
+    <meta name="twitter:image" content="page_preview.png">
+
+
+    <!-- One Apple Touch Icon (iOS home screen) -->
+    <link rel="apple-touch-icon" href="icon_128.ico">
+
+    <!--  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rainen">
+    <!-- add description -->
+    <meta name="description" content="a character card with javascript"> 
+    <!-- add normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- add stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- add script -->
+    <script src="script.js" defer></script>
+    <!-- add icon -->
+    <link rel="icon" href="icon_32.ico">
+    <!-- add title -->
+    <title>Character Card</title>
+</head>
+<body>
+    <div id="content">
+        <header>
+
+        </header>
+        <main>
+             <div class="card">
+                <img id="charImage" class="image" src="" alt="Swamp Beast Diplomat">
+
+                <div class="name" id="charName"></div>
+
+                <div class="stats">
+                    <p id="charClass"></p>
+                    <p id="charLevel"></p>
+                    <p id="charHealth"></p>
+                </div>
+
+                <div class="buttons">
+                    <button id="attackBtn" type="button">Attack</button>
+                    <button id="levelBtn" type="button">Level Up</button>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+
+        </footer>
+
+    </div>
+    
+</body>
+</html>
