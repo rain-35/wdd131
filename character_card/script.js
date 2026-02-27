@@ -3,7 +3,7 @@ const character = {
     class: "Swamp Beast Diplomat",
     level: 1,
     health: 100,
-    image: "character_card.png",
+    image: "character_card.webp",
 
     attacked() {
         this.health -= 20;
@@ -16,7 +16,7 @@ const character = {
     checkHealth() {
         if (this.health <= 0) {
             alert(`${this.name} has been defeated!`);
-            this.image = "character_card_dead.png";
+            this.image = "character_card_dead.webp";
             this.updateCard();
         } 
 
