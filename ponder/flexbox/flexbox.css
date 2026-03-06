@@ -49,7 +49,7 @@ justify-content: center;
 }
 
 .gallery > * {
-    flex: 0 1 460px;
+    flex: 1 1 460px;
 }
 
 
@@ -67,9 +67,9 @@ justify-content: center;
     .media-card li {
         flex: 0 1 5em;
     }
-    .gallary section {
+    /* .gallary section {
         flex: 0 1 460px;
-    }
+    } */
 
 
 
