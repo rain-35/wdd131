@@ -5,49 +5,99 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Recipie">
     <meta property="og:description" content="Discover delicious recipes for every occasion.">
-    <meta property="og:url" content="">
+    <meta property="og:url" content="https://rain-35.github.io/wdd131/recipies/index.html">
     <!-- preview image goes here -->
     <meta property="og:image" content="">
 
     <!-- Twitter Card -->
      <!-- summary image -->
-    <meta name="twitter:card" content="">
+    <meta name="twitter:card" content="Social preview image">
     <!-- page title -->
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Recipei">
+    <meta name="twitter:description" content="Discover delicious recipes for every occasion.">
     <!-- preview image goes here -->
     <meta name="twitter:image" content="">
 
 
     <!-- One Apple Touch Icon (iOS home screen) -->
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.webp">
 
     <!--  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Rainen">
     <!-- add description -->
-    <meta name="description" content=""> 
+    <meta name="description" content="Discover delicious recipes for every occasion."> 
     <!-- add normalize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <!-- add stylesheet -->
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="styles.css">
     <!-- add script -->
-    <script src="" defer></script>
+    <script src="script.js" defer></script>
     <!-- add icon -->
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="images/recipebook_icon.ico">
     <!-- add title -->
     <title>Document</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="content">
-        <header>
+        <header class="site_header">
+          <div id="title">
+            <img id="recipie_book_icon" src="images/recipe-book.png" alt="recipie book icon">
+            <h1 id="title">Recipie</h1>
+          </div>
 
         </header>
         <main>
+            <div class="search">
+              <input type="text" placeholder="Find a recipe">
+              <hr id="search_divider">
+              <button id="search_button"><img src="images/search_icon.ico" alt="search icon"></button>
+            </div>
+
+            <hr id="recipie_divider">
+
+            <div class="recipie_box">
+              <img id="recipie_card_img" src="images/apple_crisp.webp" alt="">
+              <div class="recipie_info">
+                <div id="recipie_category">Dessert</div>
+                <h2 id="recipie_name">Apple Crisp</h2>
+                <span
+                  class="rating"
+                  role="img"
+                  aria-label="Rating: 4 out of 5 stars">
+                  <span aria-hidden="true" class="icon-star">⭐</span>
+                  <span aria-hidden="true" class="icon-star">⭐</span>
+                  <span aria-hidden="true" class="icon-star">⭐</span>
+                  <span aria-hidden="true" class="icon-star">⭐</span>
+                  <span aria-hidden="true" class="icon-star-empty">☆</span>
+                </span>           
+                <p id="recipie_description">This apple crisp is a simple yet delicious fall dessert that's great serverd warm with vanilla ice cream.</p>
+
+              </div>
+
+
+            </div>
 
         </main>
         <footer>
+          
+            <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>                   
+            
+            <div class="social">
+              <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+              <!-- unable to find icons at that link so I made my own -->
+              <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+              <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+              <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+            </div>
+                
 
         </footer>
 

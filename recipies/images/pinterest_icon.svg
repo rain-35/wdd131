@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- Outer circle -->
+  <circle cx="12" cy="12" r="9"></circle>
+
+  <!-- Stylized P -->
+  <path d="M12 7c2.2 0 4 1.5 4 3.5 0 2.5-2 3.5-3.5 3.5-1 0-1.8-.5-2.1-1l-.8 3"></path>
+
+</svg>
