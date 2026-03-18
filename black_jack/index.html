@@ -47,20 +47,56 @@
                     <img class="logo" src="images/blackjack21_logo.webp" alt="blackjack 21 logo">
                 </a>
                 <h1>Blackjack 21</h1>
-                <button class="menu_button">
+                <button id="menu_button" class="menu_button">
                     <hr>
                     <hr>
                     <hr>
                 </button>
-                <nav>
+                <nav id="nav_box" class="hidden">
                     <a href="#">Home</a>
                     <a href="rules.html">How to Play</a>
                 </nav>
-            
             </div>
-
         </header>
+
         <main>
+            <div id="welcome_box">
+                <h2>How to Play</h2>
+                <p>
+                Start the game, then choose Hit or Stand. Get as close to 21 as possible without going over.
+                Beat the dealer to win.
+                </p>
+
+            </div>
+            <section id="dealer_area" class="play_area">
+                <div class="play_header">
+                    <h3 class="hand_title">Dealer's Hand</h3>
+                    <h3 class="score">visible score: 21</h3>
+                </div>
+                <div id="dealer_hand" class="hand">
+                    <!-- dealer's cards will be displayed here -->
+                    <img class="card dealer_hidden"  src="" alt="">
+                    <img class="card dealer_visible" src="" alt="">
+
+                </div>
+
+            </section>
+
+
+            <section id="player_area" class="play_area">
+                <div class="play_header">
+                    <h3 class="hand_title">Player's Hand</h3>
+                    <h3 class="score">visible score: 21</h3>
+                </div>
+                <div id="player_hand" class="hand">
+                    <img class="card player_hidden"  src="" alt="">
+                    <img class="card player_visible" src="" alt="">
+                    <!-- player's cards will be displayed here -->
+
+                </div>
+
+            </section>
+            
 
         </main>
         <footer>
