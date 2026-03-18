@@ -6,7 +6,7 @@
   --accent2-color: #540D6E;
 
   /* change the values below to your chosen font(s) */
-  --heading-font: Georgia, Impact, sans-serif;
+  --heading-font: Georgia;
   --paragraph-font: Verdana, Helvetica, sans-serif;
 
   /* these colors below should be chosen from among your palette colors above */
@@ -25,16 +25,71 @@
   --nav-hover-background-color: var(--primary-color);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--headline-color-on-white);
+}
 
-header {
-    height: 200px;
-    border: black 1px solid;
-    margin: 10px;
-    border-radius: 10px;
 
+.title_bar {
+  margin: 10px;
+  border-radius: 10px;
+  display: grid;
+  background-color: var(--primary-color);
+  margin-bottom: 0;
+  grid-template-columns: 1fr 2fr 1fr;
+}
 
+h1 {
+  justify-self: center;
+  color: var(--headline-color-on-color);
+  font-size: 2em;
+}
+
+.logo_box {
+  height: 100%;
 }
 
 .logo {
-    max-height: 100%;
+height: 150px;
 }
+
+.menu_button {
+  background-color: transparent;
+  border: none;
+  justify-self: end;
+  margin-right: 20%;
+  cursor: pointer;
+  height: fit-content;
+  align-self: center;
+
+}
+
+.menu_button hr {
+  background-color: white;
+  margin: 5px;
+  border: none;
+  height: 4px;
+  width: 20px;
+
+}
+
+nav {
+background-color: var(--primary-color);
+height: 100px;
+
+}
+
+nav a {
+  color: var(--nav-link-color);
+  background-color: var(--nav-background-color);
+  padding: 
+
+}
+
+
