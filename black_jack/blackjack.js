@@ -70,13 +70,43 @@ let draw_pile = [...deck];
 let player_hand = [];
 let dealer_hand = [];
 
+
+const player_hand_div = document.getElementById("player_hand");
+const dealer_hand_div = document.getElementById("dealer_hand");
+
+function getCardHtml(card) {
+    return `<img class="card card_visible" src="${card.img}" alt="${card.name}">`;  
+}
+
+function getHiddenPlayerCardHtml(card) {
+    return`<img class="card card_player_hidden"  src="${card.img}" alt="${card.name}">`
+}
+
+function getHiddenDealerCardHtml(card) {
+    return `<img class="card card_dealer_hidden"  src="images/card_back.png" alt="${card.name}">`
+}
+
+function startGame() {
+    
+}
+
+function clearHands() {
+    player_hand_div.innerHTML = "";
+    dealer_hand_div.innerHTML = "";
+}
+
 function resetGame() {
     player_hand = [];
     dealer_hand = [];
     draw_pile = [...deck];
 }
 
+
+
 function setPlayerHiddenCard(hidden_card) {
+    
+
+
 
 }
 
@@ -109,6 +139,8 @@ function drawDealerCard() {
     let card = getRandomCard();
     dealer_hand.push(card);
 }
+
+
 
 
 

@@ -208,12 +208,12 @@ h3{
   width: 60px;
 }
 
-.player_hidden{
+.card_player_hidden{
   filter: grayscale(80%) brightness(0.7);
 
 }
 
-.dealer_hidden{
+.card_dealer_hidden{
   
 }
 
