@@ -65,14 +65,57 @@ const deck = [
   { name: "king_of_spades", value: 10, img: "images/playing_cards/king_of_spades.png" }
 ];
 
+const player_hand_div = document.getElementById("player_hand");
+const dealer_hand_div = document.getElementById("dealer_hand");
+const player_score_div = document.getElementById("player_score");
+const dealer_score_div = document.getElementById("dealer_score");
+
+start_button = document.getElementById("start_button");
+hit_button = document.getElementById("hit_button");
+stand_button = document.getElementById("stand_button");
+
+let player_score = 0;
+let dealer_score = 0;
+
 let draw_pile = [...deck];
 
 let player_hand = [];
 let dealer_hand = [];
 
 
-const player_hand_div = document.getElementById("player_hand");
-const dealer_hand_div = document.getElementById("dealer_hand");
+
+
+function playerTurnHit() {
+    if (getTotal(player_hand) == 21) {
+        
+    }
+    drawPlayercard();
+    setPlayerCard(player_hand[player_hand.length - 1]);
+    getTotal(player_hand);
+}
+
+
+
+// get hand total whyle accounting for aces
+function getTotal(hand) {
+    let total = 0;
+    let ace_count = 0;
+
+    for (let i = 0; i < hand.length; i++) {
+        total += hand[i].value;
+        if (hand[i].name.includes("ace")) {
+            ace_count++;
+        }
+    }
+
+    while (total > 21 && ace_count > 0) {
+        total -= 10;
+        ace_count--;
+    }
+
+    return total;
+
+}
 
 function getCardHtml(card) {
     return `<img class="card card_visible" src="${card.img}" alt="${card.name}">`;  
@@ -87,7 +130,15 @@ function getHiddenDealerCardHtml(card) {
 }
 
 function startGame() {
-    
+    // reset the game
+    resetGame();
+    // draw srarting cards
+    drawDealerCard();
+    drawPlayercard();
+    drawDealerCard();
+    drawPlayercard();
+    // display starting hands
+    displayInitialHands();
 }
 
 function clearHands() {
@@ -96,30 +147,31 @@ function clearHands() {
 }
 
 function resetGame() {
-    player_hand = [];
-    dealer_hand = [];
+    clearHands();
     draw_pile = [...deck];
 }
 
-
+function displayInitialHands() {
+    setPlayerHiddenCard(player_hand[0]);
+    setDealerHiddenCard(dealer_hand[0]);
+    setPlayerCard(player_hand[1]);
+    setDealerCard(dealer_hand[1]);
+}
 
 function setPlayerHiddenCard(hidden_card) {
-    
-
-
-
+    player_hand_div.innerHTML += getHiddenPlayerCardHtml(hidden_card);
 }
 
 function setPlayerCard(card) {
-
+    player_hand_div.innerHTML += getCardHtml(card);
 }
 
 function setDealerHiddenCard(hidden_card) {
-
+    dealer_hand_div.innerHTML += getHiddenDealerCardHtml(hidden_card);
 }
 
 function setDealerCard(card) {
-
+    dealer_hand_div.innerHTML += getCardHtml(card);
 }
 
 function getRandomCard() {
@@ -128,7 +180,6 @@ function getRandomCard() {
     draw_pile.splice(random_card_index, 1);
     return random_card;
 }
-
 
 function drawPlayercard() {
     let card = getRandomCard();
@@ -142,8 +193,7 @@ function drawDealerCard() {
 
 
 
-
-
+// menu button functionality
 nav_box = document.getElementById("nav_box");
 menu_button = document.getElementById("menu_button");
 
@@ -152,3 +202,4 @@ menu_button.addEventListener("click", toggleMenu);
 function toggleMenu() {
     nav_box.classList.toggle("hidden");
 }
+// end menu button functionality
