@@ -1,0 +1,275 @@
+:root {
+  /* change the values below to your colors from your palette */
+  --primary-color: #414288;
+  --secondary-color: #F1F7ED;
+  --accent1-color: #E3D081;
+  --accent2-color: #540D6E;
+  --accent3-color: #91c7b1;
+
+  /* change the values below to your chosen font(s) */
+  --heading-font: Georgia;
+  --paragraph-font: Verdana, Helvetica, sans-serif;
+
+  /* these colors below should be chosen from among your palette colors above */
+  --page-background-color: Black;
+  --headline-color-on-white: black; /* headlines on a white background */
+  --headline-color-on-color: white; /* headlines on a colored background */
+  --paragraph-color-on-white: var(--primary-color); /* paragraph text on a white background */
+  --paragraph-color-on-color: black; /* paragraph text on a colored background */
+  --paragraph-background-color: var(--secondary-color);
+  --nav-link-color: var(--accent1-color);
+  --nav-background-color: var(none);
+  --nav-hover-link-color: white;
+  --nav-hover-background-color: var(--accent2-color);
+  --play-area-background-color: var(--accent3-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--headline-color-on-white);
+}
+
+p {
+  font-family: var(--paragraph-font);
+  color: var(--paragraph-color-on-color);
+  
+}
+
+#content{
+  width: 98%;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: var(--page-background-color);
+  border: solid 1px darkgray;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.title_bar {
+  
+  border-radius: 10px;
+  display: grid;
+  background-color: var(--primary-color);
+  margin-bottom: 0;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr minmax(0 .5fr);
+  height: fit-content;
+  margin-bottom: 5px;
+
+  
+}
+
+h1 {
+  justify-self: center;
+  color: var(--headline-color-on-color);
+  font-size: 2em;
+  width: fit-content;
+  text-wrap: nowrap;
+  height: fit-content;
+  margin: 0;
+  align-self: center;
+
+}
+
+.logo_box {
+  height: 60px;
+  align-self: center;
+  margin: 10px;
+
+}
+
+.logo {
+  height: 100%;
+ 
+}
+
+.menu_button {
+  background-color: transparent;
+  border: none;
+  justify-self: end;
+  margin-left: 20%;
+  margin-right: 20%;
+  cursor: pointer;
+  height: fit-content;
+  align-self: center;
+
+}
+
+.menu_button hr {
+  background-color: white;
+  margin: 5px;
+  border: none;
+  height: 4px;
+  width: 20px;
+
+}
+
+nav {
+  grid-row: 2;
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 5px;
+  
+
+}
+
+nav a {
+  color: var(--nav-link-color);
+  background-color: var(--nav-background-color);
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  align-items: center;
+  width: 50%;
+  text-decoration: none;
+  border: 2px solid var(--accent2-color);
+  border-radius: 5px;
+  max-width: 130px;
+  transition-duration: 50ms;
+  padding: 2px;
+}
+
+
+
+nav a:hover {
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
+  scale: 1.05;
+}
+
+.hidden {
+  display: none;
+}
+
+#welcome_box {
+  background-color: var(--paragraph-background-color);
+  color: var(--paragraph-color-on-color);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+
+}
+
+h2 {
+  justify-self: center;
+  margin: 0;
+}
+  
+.play_area {
+  background-color: var(--play-area-background-color);
+  border-radius: 5px;
+  min-height: fit-content;
+  padding: 5px;
+  margin-bottom: 5px;
+
+}
+
+.play_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 5px;
+  height: 1.5em;
+
+}
+
+h3{
+  line-height: 0;
+  margin: 0;
+  padding: 5px;
+}
+
+.score {
+  justify-self: end;
+}
+
+.hand{
+  display: flex;
+  gap: 10px;
+  border: solid 1px var(--accent2-color);
+  min-height: 100px;
+  border-radius: 5px;
+  padding: 3px;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 100px;
+  width: auto;
+}
+
+#card_player_hidden{
+  filter: grayscale(80%) brightness(0.7);
+}
+
+#message_area{
+  height: fit-content;
+  margin: 0;
+  min-height: 4em;
+
+
+  
+}
+
+.status_message{
+  margin: 0;
+
+  text-align: center;
+  color: white;
+  line-height: 1em;
+}
+
+
+
+
+@media screen and (min-width: 700px){
+
+.menu_button {
+  display: none;
+}
+
+.title_bar {
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100px;
+}
+
+#nav_box {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  grid-row: 1;
+  grid-column: 3;
+  text-align: right;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 5px;
+  justify-self: end;
+  justify-content: end;
+  margin: 5px;
+  max-width: 200px;
+
+  }
+
+nav a {
+  gap: 5px;
+  text-wrap: nowrap;
+  height: fit-content;
+  justify-self: end;
+  padding: 2px;
+  width: 100%;
+}
+
+
+}

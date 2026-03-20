@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blackjack 21 - Play Blackjack Against the Computer">
+    <meta property="og:description" content="Play a simple browser-based Blackjack game against a computer dealer. Try to reach 21 without busting.">
+    <meta property="og:url" content="https://rain-35.github.io/wdd131/black_jack/">
+    <!-- preview image goes here -->
+    <meta property="og:image" content="images/blackjack_preview.webp">
+
+    <!-- Twitter Card -->
+     <!-- summary image -->
+    <meta name="twitter:card" content="summary">
+    <!-- page title -->
+    <meta name="twitter:title" content="Blackjack 21">
+    <meta name="twitter:description" content="Play Blackjack against a computer dealer in this simple browser game.">
+    <!-- preview image goes here -->
+    <meta name="twitter:image" content="images/blackjack_preview.webp">
+
+
+    <!-- One Apple Touch Icon (iOS home screen) -->
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!--  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rainen">
+    <!-- add description -->
+    <meta name="description" content="Blackjack 21 is a simple web-based Blackjack game where you play against a computer dealer. Try to get as close to 21 as possible without busting."> 
+    <!-- add normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- add stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- add script -->
+    <script src="blackjack.js" defer></script>
+    <!-- add icon -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- add title -->
+    <title>Blackjack 21</title>
+</head>
+<body>
+    <div id="content">
+        <header>
+            <div class="title_bar">
+                <a class="logo_box" href="#" >
+                    <img class="logo" src="images/blackjack21_logo.webp" alt="blackjack 21 logo">
+                </a>
+                <h1>Blackjack 21</h1>
+                <button id="menu_button" class="menu_button">
+                    <hr>
+                    <hr>
+                    <hr>
+                </button>
+                <nav id="nav_box" class="hidden">
+                    <a href="#">Home</a>
+                    <a href="rules.html">How to Play</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div id="welcome_box">
+                <h2>How to Play</h2>
+                <p>
+                Start the game, then choose Hit or Stand. Get as close to 21 as possible without going over.
+                Beat the dealer to win.
+                </p>
+
+            </div>
+            <section id="dealer_area" class="play_area">
+                <div class="play_header">
+                    <h3 class="hand_title">Dealer's Hand</h3>
+                    <h3 id="dealer_score" class="score dealer_score">visible score: 21</h3>
+                </div>
+                <div id="dealer_hand" class="hand">
+                    <!-- dealer's cards will be displayed here -->
+
+                </div>
+            </section>
+
+            <section id="message_area">
+                <h3 class="status_message">Welcome to Blackjack 21 - Press New Game to start!</h3>
+            </section>
+
+            <section id="player_area" class="play_area">
+                <div class="play_header">
+                    <h3 class="hand_title">Player's Hand</h3>
+                    <h3 id="player_score" class="score player_score">score: 21</h3>
+                </div>
+                <div id="player_hand" class="hand">
+                    <!-- player's cards will be displayed here -->
+
+                </div>
+
+            </section>
+
+            <section id="button_box">
+                <button id="hit_button">Hit</button>
+                <button id="stand_button">Stand</button>
+                <button id="start_button">New Game</button>
+            </section>
+            
+
+        </main>
+        <footer>
+
+        </footer>
+
+    </div>
+    
+</body>
+</html>
