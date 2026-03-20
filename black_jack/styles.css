@@ -100,7 +100,8 @@ h1 {
 
 }
 
-.menu_button hr {
+.menu_button span {
+  display: block;
   background-color: white;
   margin: 5px;
   border: none;

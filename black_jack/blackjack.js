@@ -310,12 +310,12 @@ function getTotal(hand) {
     let total = 0;
     let ace_count = 0;
 
-    for (let i = 0; i < hand.length; i++) {
-        total += hand[i].value;
-        if (hand[i].name.includes("ace")) {
+    hand.forEach(function(card) {
+        total += card.value;
+        if (card.name.includes("ace")) {
             ace_count++;
         }
-    }
+    });
 
     while (total > 21 && ace_count > 0) {
         total -= 10;
@@ -323,8 +323,8 @@ function getTotal(hand) {
     }
 
     return total;
-
 }
+
 function getVisibleTotal(hand){
     let total = 0;
     let ace_count = 0;
