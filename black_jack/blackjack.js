@@ -70,9 +70,6 @@ const dealer_hand_div = document.getElementById("dealer_hand");
 const player_score_h3 = document.getElementById("player_score");
 const dealer_score_h3 = document.getElementById("dealer_score");
 const message_div = document.getElementById("message_area");
-const player_score_h3 = document.getElementById("player_score");
-const dealer_score_h3 = document.getElementById("dealer_score");
-const message_div = document.getElementById("message_area");
 
 start_button = document.getElementById("start_button");
 hit_button = document.getElementById("hit_button");
@@ -88,24 +85,7 @@ let draw_pile = [...deck];
 let player_hand = [];
 let dealer_hand = [];
 
-let win_status = 0;
-
-start_button.addEventListener("click", startGame);
-
-
-function startGame() {
-    // reset the game
-    resetGame();
-    // draw srarting cards
-    drawDealerCard();
-    drawPlayercard();
-    drawDealerCard();
-    drawPlayercard();
-    // display starting hands
-    displayInitialHands();
-    displayDealerTotal();
-    displayPlayerTotal();
-}//start the game
+//start the game
 start_button.addEventListener("click", startGame);
 function startGame() {
 
@@ -229,17 +209,94 @@ async function playerEndTurn() {
 //player options
 hit_button.addEventListener("click", playerTurnHit);
 function playerTurnHit() {
-    if (getTotal(player_hand) == 21) {
-        
-    }
+    //make sure no one has won
+    if (play_check == 0) {return}
+    //make sure it is the playrs turn
+    if (player_turn == 0) {return}
+    player_turn = 0;
     drawPlayercard();
     setPlayerCard(player_hand[player_hand.length - 1]);
-    getTotal(player_hand);
+    displayPlayerTotal(getTotal(player_hand));
+    playerEndTurn();
+    
 }
 
+stand_button.addEventListener("click", playerTurnStand);
+async function playerTurnStand() {
+    //make sure no one has won
+    if (play_check == 0) {return}
+    //make sure it is the players turn
+    if (player_turn == 0) {return}
+    player_stand = 1;
+    player_turn = 0;
+    await sleep(100);
+    displayMessage("You Stand!");
+    checkStand();
+    playerEndTurn();
+}
+//
 
+//check if game is over
+function checkStand(){
+    if (player_stand == 1 && dealer_stand == 1) {
+        play_check = 0;
+        endGame();
+    }
+}
+//run if both players have stood
+async function endGame() {
+    //chceck who won
+        await sleep(500);    
+    if (getTotal(player_hand) > getTotal(dealer_hand) ) {
+        showDealerHiddenCard();
+        await sleep(200);
+        displayDealerTotal(getTotal(dealer_hand));
+        clearMessage();
+        await sleep(200);
+        displayMessage("You Win!");
+    }else if (getTotal(player_hand) < getTotal(dealer_hand)) {
+        showDealerHiddenCard();
+        await sleep(200);
+        displayDealerTotal(getTotal(dealer_hand));
+        clearMessage();
+        await sleep(200);
+        displayMessage("You Lose!");
+    }else{
+        showDealerHiddenCard();
+        await sleep(200);
+        displayDealerTotal(getTotal(dealer_hand));
+        clearMessage();
+        await sleep(200);
+        displayMessage("It's a Tie!");
+    }
+}
+//
 
-// get hand total whyle accounting for aces
+function check21(hand) {
+    if (getTotal(hand) == 21) {
+        return true;
+    }
+}
+function checkBust(hand) {
+    if (getTotal(hand) > 21) {
+        play_check = 0;
+        return true;
+    }
+}
+
+// message display
+function displayMessageDelay(message, delay) {
+        setTimeout(displayMessage, delay, message);
+}
+function displayMessage(message) {
+    message_div.innerHTML += `<h3 class="status_message">${message}</h3>`;
+}
+function clearMessage(){
+    message_div.innerHTML = "";
+} 
+//
+
+// get hand total while accounting for aces
 function getTotal(hand) {
     let total = 0;
     let ace_count = 0;
@@ -289,17 +346,14 @@ function getHiddenPlayerCardHtml(card) {
 function getHiddenDealerCardHtml(card) {
     return `<img id="card_dealer_hidden" class="card"  src="images/card_back.png" alt="${card.name}">`
 }
+//
 
-function startGame() {
-    // reset the game
-    resetGame();
-    // draw srarting cards
-    drawDealerCard();
-    drawPlayercard();
-    drawDealerCard();
-    drawPlayercard();
-    // display starting hands
-    displayInitialHands();
+// display hand totals
+function displayDealerTotal(visible_total){
+    dealer_score_h3.innerHTML = "Visible Score: " + visible_total;
+}
+function displayPlayerTotal(total){
+    player_score_h3.innerHTML = "Score: " + total;
 }
 //
 
