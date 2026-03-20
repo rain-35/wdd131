@@ -188,8 +188,6 @@ h3{
   padding: 5px;
 }
 
-
-
 .score {
   justify-self: end;
 }
@@ -210,12 +208,28 @@ h3{
 
 .card_player_hidden{
   filter: grayscale(80%) brightness(0.7);
-
 }
 
-.card_dealer_hidden{
+
+
+
+
+#message_area{
+  height: fit-content;
+  margin: 0;
+
+
   
 }
+
+.status_message{
+  margin: 0;
+  text-align: center;
+  color: white;
+  line-height: 1em;
+}
+
+
 
 
 @media screen and (min-width: 700px){

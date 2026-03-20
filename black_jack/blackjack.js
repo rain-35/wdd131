@@ -67,8 +67,9 @@ const deck = [
 
 const player_hand_div = document.getElementById("player_hand");
 const dealer_hand_div = document.getElementById("dealer_hand");
-const player_score_div = document.getElementById("player_score");
-const dealer_score_div = document.getElementById("dealer_score");
+const player_score_h3 = document.getElementById("player_score");
+const dealer_score_h3 = document.getElementById("dealer_score");
+const message_div = document.getElementById("message_area");
 
 start_button = document.getElementById("start_button");
 hit_button = document.getElementById("hit_button");
@@ -82,19 +83,50 @@ let draw_pile = [...deck];
 let player_hand = [];
 let dealer_hand = [];
 
+let win_status = 0;
 
+start_button.addEventListener("click", startGame);
+
+
+function startGame() {
+    // reset the game
+    resetGame();
+    // draw srarting cards
+    drawDealerCard();
+    drawPlayercard();
+    drawDealerCard();
+    drawPlayercard();
+    // display starting hands
+    displayInitialHands();
+    displayDealerTotal();
+    displayPlayerTotal();
+}
 
 
 function playerTurnHit() {
-    if (getTotal(player_hand) == 21) {
-        
+    if (check21(player_hand) == true) {
+        return
     }
     drawPlayercard();
     setPlayerCard(player_hand[player_hand.length - 1]);
     getTotal(player_hand);
 }
 
+function check21(hand) {
+    if (getTotal(hand) == 21) {
+        clearMessage();
+        displayMessage("Blackjack! You win!");
+        return true;
+    }
+}
 
+function displayMessage(message) {
+    message_div.innerHTML += message;
+}
+
+function clearMessage(){
+    message_div.innerHTML = "";
+} 
 
 // get hand total whyle accounting for aces
 function getTotal(hand) {
@@ -129,16 +161,15 @@ function getHiddenDealerCardHtml(card) {
     return `<img class="card card_dealer_hidden"  src="images/card_back.png" alt="${card.name}">`
 }
 
-function startGame() {
-    // reset the game
-    resetGame();
-    // draw srarting cards
-    drawDealerCard();
-    drawPlayercard();
-    drawDealerCard();
-    drawPlayercard();
-    // display starting hands
-    displayInitialHands();
+function displayDealerTotal(){
+    total = getTotal(dealer_hand);
+    total = total - dealer_hand[0].value;
+    dealer_score_h3.innerHTML = "Visible Score: " + total;
+}
+
+function displayPlayerTotal(){
+    total = getTotal(player_hand);
+    player_score_h3.innerHTML = "Visible Score: " + total;
 }
 
 function clearHands() {
