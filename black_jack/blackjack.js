@@ -178,6 +178,8 @@ async function playerStartTurn(){
         playerEndTurn();
     } else if (player_blackjack == 1){
         displayMessage("Blackjack automatically stands");
+        player_turn = 0;
+        playerEndTurn();
     } else if (player_stand == 1){
         playerTurnStand();
     }
@@ -208,12 +210,14 @@ async function playerEndTurn() {
 
 //player options
 hit_button.addEventListener("click", playerTurnHit);
-function playerTurnHit() {
+async function playerTurnHit() {
     //make sure no one has won
     if (play_check == 0) {return}
     //make sure it is the playrs turn
     if (player_turn == 0) {return}
     player_turn = 0;
+    await sleep(100);
+    displayMessage("You Hit!");
     drawPlayercard();
     setPlayerCard(player_hand[player_hand.length - 1]);
     displayPlayerTotal(getTotal(player_hand));
