@@ -111,8 +111,13 @@ async function dealerTurn(){
     clearMessage();
     displayMessage("Dealer's Turn");
     await sleep(800);
+    
     //dealer decides whether to hit or stand
-    if (dealer_stand == 1) {
+    if (check21(dealer_hand) == true){
+        dealerTurnStand();
+        playerStartTurn();
+        return;
+    }else if (dealer_stand == 1) {
         dealerTurnStand();
     }else if (getTotal(dealer_hand) < 17){
         dealerTurnHit();
@@ -348,7 +353,7 @@ function getHiddenPlayerCardHtml(card) {
     return`<img id="card_player_hidden" class="card"  src="${card.img}" alt="${card.name}">`
 }
 function getHiddenDealerCardHtml(card) {
-    return `<img id="card_dealer_hidden" class="card"  src="images/card_back.png" alt="${card.name}">`
+    return `<img id="card_dealer_hidden" class="card"  src="images/card_back.png" alt="This card is hidden">`
 }
 //
 
@@ -396,7 +401,7 @@ function setPlayerCard(card) {
 }
 function showPlayerHiddenCard(){
     hidden_card = document.getElementById("card_player_hidden");
-    hidden_card.removeAttribute("card_player_hidden");
+    hidden_card.removeAttribute("id");
 }
 function setDealerHiddenCard(hidden_card) {
     dealer_hand_div.innerHTML += getHiddenDealerCardHtml(hidden_card);
@@ -407,6 +412,7 @@ function setDealerCard(card) {
 function showDealerHiddenCard(){
     hidden_card = document.getElementById("card_dealer_hidden");
     hidden_card.src = dealer_hand[0].img;
+    hidden_card.alt = dealer_hand[0].name;
 }
 //
 

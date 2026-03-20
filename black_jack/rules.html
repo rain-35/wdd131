@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blackjack 21 - Play Blackjack Against the Computer">
+    <meta property="og:description" content="Play a simple browser-based Blackjack game against a computer dealer. Try to reach 21 without busting.">
+    <meta property="og:url" content="https://rain-35.github.io/wdd131/black_jack/">
+    <!-- preview image goes here -->
+    <meta property="og:image" content="https://rain-35.github.io/wdd131/black_jack/images/blackjack_preview.webp">
+
+    <!-- Twitter Card -->
+     <!-- summary image -->
+    <meta name="twitter:card" content="summary">
+    <!-- page title -->
+    <meta name="twitter:title" content="Blackjack 21">
+    <meta name="twitter:description" content="Play Blackjack against a computer dealer in this simple browser game.">
+    <!-- preview image goes here -->
+    <meta name="twitter:image" content="https://rain-35.github.io/wdd131/black_jack/images/blackjack_preview.webp">
+
+
+    <!-- One Apple Touch Icon (iOS home screen) -->
+    <link rel="apple-touch-icon" href="https://rain-35.github.io/wdd131/black_jack/images/apple-touch-icon.png">
+
+    <!--  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rainen">
+    <!-- add description -->
+    <meta name="description" content="Blackjack 21 is a simple web-based Blackjack game where you play against a computer dealer. Try to get as close to 21 as possible without busting."> 
+    <!-- add normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- add stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- add script -->
+    <script src="rules.js" defer></script>
+    <!-- add icon -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- add title -->
+    <title>Blackjack Rules</title>
+</head>
+<div id="content">
+        <header>
+            <div class="title_bar">
+                <a class="logo_box" href="index.html" >
+                    <img class="logo" src="images/blackjack21_logo.webp" alt="blackjack 21 logo">
+                </a>
+                <h1>Blackjack 21</h1>
+                <button id="menu_button" class="menu_button" aria-label="menu button">
+                    <hr>
+                    <hr>
+                    <hr>
+                </button>
+                <nav id="nav_box" class="hidden">
+                    <a href="index.html">Home</a>
+                    <a href="#">How to Play</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="rules_page">
+            <section class="rules_intro">
+                <h2>How to Play Blackjack</h2>
+                <p>
+                    Welcome to Blackjack 21. The goal is to beat the dealer by getting closer to 21
+                    without going over. This page explains the rules, card values, and how each round works.
+                </p>
+            </section>
+
+            <section class="rules_card">
+                <h2>Goal of the Game</h2>
+                <p>
+                    Try to finish with a higher total than the dealer without going over 21.
+                    If your hand goes above 21, you bust and lose the round.
+                </p>
+            </section>
+
+            <section class="rules_card">
+                <h2>Card Values</h2>
+                <ul class="rules_list">
+                    <li>Number cards from 2 to 10 are worth their face value.</li>
+                    <li>Jack, Queen, and King are each worth 10.</li>
+                    <li>Aces count as 11 unless that would cause a bust, then they count as 1.</li>
+                </ul>
+            </section>
+
+            <section class="rules_card">
+                <h2>How a Round Works</h2>
+                <ol class="rules_list">
+                    <li>Click <strong>New Game</strong> to begin.</li>
+                    <li>You and the dealer each receive two cards.</li>
+                    <li>One of the dealer’s cards stays hidden at first.</li>
+                    <li>Click <strong>Hit</strong> to draw another card.</li>
+                    <li>Click <strong>Stand</strong> to keep your current hand.</li>
+                    <li>After you stand, the dealer takes their turn automatically.</li>
+                </ol>
+            </section>
+
+            <section class="rules_card">
+                <h2>Dealer Rules</h2>
+                <p>
+                    The dealer follows fixed rules. The dealer draws cards until reaching at least 17,
+                    then stands. If the dealer goes over 21, the dealer busts and you win.
+                </p>
+            </section>
+
+            <section class="rules_card">
+                <h2>Winning the Round</h2>
+                <ul class="rules_list">
+                    <li>If you bust, you lose.</li>
+                    <li>If the dealer busts, you win.</li>
+                    <li>If neither side busts, the higher total wins.</li>
+                    <li>If both totals are equal, the round is a tie.</li>
+                </ul>
+            </section>
+
+            <section class="rules_card">
+                <h2>Quick Tips</h2>
+                <ul class="rules_list">
+                    <li>Low totals are usually safer to hit on.</li>
+                    <li>Standing on a strong total can help avoid busting.</li>
+                    <li>Pay attention to the dealer’s visible card before deciding.</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Copyright 2026 Rainen Morriss</p>
+
+        </footer>
+
+    </div>
+    
+</body>
+</html>
